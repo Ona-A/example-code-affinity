@@ -6,6 +6,13 @@ the overview page, you will have to go to the overview page and then reload the 
 
 This code assumes the customer has only 1 address - another reason this is NOT PRODUCTION READY CODE!!!
 
+This code does five things:
+1) Creates a header slot for content
+2) Creates a side-bar slot for an "add to my order" with discount
+3) Creates a custom product carousel for a collection in Recharge using an extension
+4) Creates a reschedule extension for a frequency of 2 weeks and 4 weeks and you can't reschedule to a weekend
+5) Creates a footer slot for gifting to a friend using a direct checkout link
+
 You will need to create a collection in Recharge and change the product_carousel_collection_ids
 You will need to change the images to match your store and any wording and hyperlinks to fit your test store
 You will need to change the gifting to a product in your store using a direct checkout link
@@ -13,12 +20,6 @@ You will need to change the discounted product to a product in your store
 You will need to create a discount code in Recharge and use the discount code in the applyDiscountToAddress method.
 
 
-This code does five things:
-1) Creates a header slot for content
-2) Creates a side-bar slot for an "add to my order" with discount
-3) Creates a custom product carousel for a collection in Recharge using an extension
-4) Creates a reschedule extension for a frequency of 2 weeks and 4 weeks and you can't reschedule to a weekend
-5) Creates a footer slot for gifting to a friend using a direct checkout link
 
 --HEADER: HTML/CSS/JS--documentation about placement do not copy
 
