@@ -1,0 +1,277 @@
+HEADER: HTML/CSS/JS
+
+<style>
+  .aff-modal-wrapper {    
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    z-index: var(--recharge-app-modal-zIndex);
+    background: rgba(0,0,0,.25);
+    opacity: 1;
+    transition-property: opacity;
+    transition-timing-function: ease;
+    transition-duration: var(.3s);
+    will-change: opacity;
+    transform: translateY(0);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    isolation: isolate;
+    cursor: pointer;
+  }
+  .aff-modal {
+    opacity: 1;
+    transform: translateY(0);
+    width: 600px;
+    max-width: 100vw;
+    max-height: 80vh;
+    overflow: auto;
+    background-color: var(--recharge-cards-background);
+    transition-property: opacity,transform;
+    transition-timing-function: ease;
+    transition-duration: .3s;
+    will-change: opacity,transform;
+    padding: 24px;
+    border-radius: var(--recharge-corners-radius) var(--recharge-corners-radius) 0 0;
+  }
+  @media screen and (min-width: 1024px) {
+    .aff-modal-wrapper {    
+      align-items: center;
+    }
+    .aff-modal {
+      border-radius: var(--recharge-corners-radius);
+    }
+  }
+
+  .aff-card {
+    background: var(--recharge-cards-background);
+    border: 1px solid var(--recharge-cards-border-color);
+    border-radius: var(--recharge-corners-radius);
+    padding: 20px;
+    line-height: 1.4;
+  }
+  .aff-button {
+    background-color: var(--recharge-button-brand);
+    border: 2px solid var(--recharge-button-brand);
+    border-radius: var(--recharge-button-border-radius);
+    color: var(--recharge-button-color) !important;
+    font-size: var(--recharge-typography-size-5);
+    font-weight: 600;
+    line-height: 150%;
+    padding: 10px 16px;
+    text-align: center;
+    cursor: pointer;
+  }
+  .aff-h3 {
+    font-size: var(--recharge-typography-size-3);
+    font-weight: 600;
+    line-height: 123%;
+  }
+  .aff-h4 {
+    font-size: var(--recharge-typography-size-4);
+    font-weight: 600;
+    line-height: 140%;
+  }
+  .aff-img {
+    border-radius: calc(var(--recharge-corners-radius) / 2);
+    max-width: 100%;
+  }
+  .aff-link,
+  a.aff-link {
+    color: var(--recharge-button-secondary) !important;
+  }
+  .aff-icon {
+    padding: 6px;
+  }
+  .t-strike {
+    text-decoration: line-through;
+  }
+  .t-flex {
+    display: flex;
+  }
+  .t-items-center {
+    align-items: center;
+  }
+  .t-items-start {
+    align-items: flex-start;
+  }
+  .t-justify-between {
+    justify-content: space-between;
+  }
+  .t-third {
+    width: 33%;
+  }
+  .t-two-thirds {
+    width: 66%;
+  }
+  .t-mb0 {
+    margin-bottom: 0;
+  }
+  .t-mb1 {
+    margin-bottom: 4px;
+  }
+  .t-mb2 {
+    margin-bottom: 8px;
+  }
+  .t-mb3 {
+    margin-bottom: 16px;
+  }
+  .t-mt3 {
+    margin-top: 16px;
+  }
+  .t-pl3 {
+    padding-left: 16px;
+  }
+  .t-pr3 {
+    padding-right: 16px;
+  }
+  .t-db {
+    display: block;
+  }
+  .t-dib {
+    display: inline-block;
+  }
+  .t-w100 {
+    width: 100%;
+  }
+</style>
+
+<script type="text/html" data-recharge-slot="homepage-header">
+  <div class="aff-card t-flex t-mb3 t-items-center">
+    <div class="t-two-thirds t-pr3">
+      <span class="aff-h4 t-db">Great BACON recipes</span>
+      <span class="t-db t-mb3"
+        >Learn how to prepare your bacon in wonderful dishes like a pro!</span
+      >
+      <a href="https://www.tasteofhome.com/collection/bacon-dinner-recipes/" class="aff-link t-db" target="_blank">Checkout the Recipes</a>
+    </div>
+
+    <div class="t-third">
+      <img
+        class="t-w100 aff-img"
+        src="https://cdn.shopify.com/s/files/1/0610/2276/5232/files/pig-bacon_1024x1024@2x.png?v=1684871658" alt="Pigs and Pigs"
+      />
+    </div>
+  </div>
+</script>
+
+<script type="text/html" data-recharge-slot="homepage-sidebar">
+  <div class="aff-card t-flex t-items-center t-justify-between t-mb3">
+    <a href="#" class="aff-h4 t-mb0">Rewards</a>
+    <div class="aff-icon aff-link">
+      <svg
+        viewBox="0 0 10 16"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        width="16"
+        height="16"
+      >
+        <path
+          d="m1.5 15 7-7-7-7"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </div>
+  </div>
+
+  <div class="aff-card" style="background-color: #dddff4;">
+    <img
+      class="aff-img"
+      src="https://cdn.shopify.com/s/files/1/0610/2276/5232/products/streakybacon_1024x1024@2x.png?v=1661188334"
+    />
+
+    <span class="aff-h4 t-db">⭐ Great Deal! ⭐</span>
+    <span class="t-mb3 t-db"
+      >This week only, add a package of bacon to your order for only
+      $5.00</span
+    >
+    <span class="t-db t-mb2"><span class="t-strike">$10.00</span> $5.00</span>
+   
+     <button type="button" class="aff-button t-db" id="bacon-button" >
+      Add to my order 
+      </button>
+  
+  </div>
+</script>
+
+<script type="text/html" data-recharge-slot="homepage-footer">
+  <div class="aff-card t-flex t-mt3 t-items-start t-justify-between">
+    <div class="t-pr3">
+      <span class="aff-h4 t-db">Treat a friend with a box(on us!)</span>
+      <span class="t-mb3 t-db"
+        >Help your friends level up their bacon experience with a box of bacon. We'll take care of delivering it for you.</span
+      >
+    </div>
+    <div class="">
+      <a href="https://onas-test-store.myshopify.com/tools/recurring/checkout_link?magic=eyJpdGVtcyI6IFt7ImlkIjogNDI2NjQ0ODU0ODY3NjgsICJxdWFudGl0eSI6IDEsICJzZWxsaW5nX3BsYW4iOiAxNDMwNzE2NTkyLCAic2VsbGluZ19wbGFuX2dyb3VwX2lkIjogMTYyMzY0NX1dfQ==&store_id=150619" class="aff-button t-dib" style="white-space: nowrap;"
+        >Gift a box</a
+      >
+    </div>
+  </div>
+</script>
+
+
+FOOTER: HTML/CSS/JS
+<script>
+document.addEventListener("DOMContentLoaded", (event) => {
+
+setTimeout(function() {
+const baconButton = document.getElementById("bacon-button");
+console.log(baconButton);
+
+  baconButton.addEventListener('click', async function(event) { 
+const session = await recharge.auth.loginShopifyAppProxy();
+const { addresses } = await recharge.address.listAddresses(session, {
+  limit: 25,
+  sort_by: 'id-asc',
+});
+const addressId = addresses[0].id
+console.log(addressId);
+
+await recharge.onetime.createOnetime(session, {
+  address_id: addressId,
+  add_to_next_charge: true,
+  quantity: 1,
+  external_variant_id: {
+    ecommerce: '41919590138032',
+  }
+});
+  
+    window.location.reload
+  });
+}, 1000)
+ 
+  });
+</script>
+
+<script>
+window.RechargeExtensions = {
+product_carousel_collection_ids: ["146545"],
+ reschedule: {
+   disableQuickOptions: false,
+   disableCalendar: false,
+   quickOptions: [
+     {
+       frequency: 2,
+       unit: 'week',
+     },
+     {
+       frequency: 4,
+       unit: 'week',
+     },
+   ],
+   calendar: {
+     enableDaysOfWeek: ['mon', 'tue', 'wed', 'thu', 'fri'],
+     enableDaysOfMonth: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31],
+     enableMonthsOfTheYear: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+   }
+ }
+}
+</script>
+
