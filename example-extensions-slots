@@ -242,7 +242,9 @@ You will need to create a discount code in Recharge and use the discount code in
 </script>
 
 
+
 --FOOTER: HTML/CSS/JS-- documentation about placement do not copy
+
 <script>
 document.addEventListener("DOMContentLoaded", (event) => {
 
