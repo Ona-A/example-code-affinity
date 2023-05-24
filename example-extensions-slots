@@ -7,6 +7,7 @@ the overview page, you will have to go to the overview page and then reload the 
 THE FIRST OF MANY REASONS THIS CODE IS NOT PRODUCTION CODE!!!
 
 This code assumes the customer has only 1 address - another reason this is NOT PRODUCTION READY CODE!!!
+This code assumes there are currently no discount codes on the address!!
 
 This code does five things:
 1) Creates a header slot for content
