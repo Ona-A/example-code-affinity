@@ -1,4 +1,26 @@
-HEADER: HTML/CSS/JS
+THIS IS SAMPLE CODE - DO NOT USE IN PRODUCTION
+
+This code assumes you have already initialized the Recharge JS SDK and the user is first being authenticated through Shopify. 
+Also, the bacon-button footer code because it is executed on every portal page, if you come into the Affinity portal and you aren't on
+the overview page, you will have to go to the overview page and then reload the page for the button to be available.
+
+This code assumes the customer has only 1 address - another reason this is NOT PRODUCTION READY CODE!!!
+
+You will need to create a collection in Recharge and change the product_carousel_collection_ids
+You will need to change the images to match your store and any wording and hyperlinks to fit your test store
+You will need to change the gifting to a product in your store using a direct checkout link
+You will need to change the discounted product to a product in your store
+You will need to create a discount code in Recharge and use the discount code in the applyDiscountToAddress method.
+
+
+This code does five things:
+1) Creates a header slot for content
+2) Creates a side-bar slot for an "add to my order" with discount
+3) Creates a custom product carousel for a collection in Recharge using an extension
+4) Creates a reschedule extension for a frequency of 2 weeks and 4 weeks and you can't reschedule to a weekend
+5) Creates a footer slot for gifting to a friend using a direct checkout link
+
+--HEADER: HTML/CSS/JS--documentation about placement do not copy
 
 <style>
   .aff-modal-wrapper {    
@@ -217,22 +239,23 @@ HEADER: HTML/CSS/JS
 </script>
 
 
-FOOTER: HTML/CSS/JS
+--FOOTER: HTML/CSS/JS-- documentation about placement do not copy
 <script>
 document.addEventListener("DOMContentLoaded", (event) => {
 
 setTimeout(function() {
-const baconButton = document.getElementById("bacon-button");
-console.log(baconButton);
+   const baconButton = document.getElementById("bacon-button");
+   console.log(baconButton);
 
-  baconButton.addEventListener('click', async function(event) { 
+baconButton.addEventListener('click', async function(event) { 
 const session = await recharge.auth.loginShopifyAppProxy();
 const { addresses } = await recharge.address.listAddresses(session, {
   limit: 25,
   sort_by: 'id-asc',
 });
-const addressId = addresses[0].id
-console.log(addressId);
+const addressId = addresses[0].id;
+
+await recharge.address.applyDiscountToAddress(session, addressId, '5.00 off');
 
 await recharge.onetime.createOnetime(session, {
   address_id: addressId,
@@ -242,8 +265,8 @@ await recharge.onetime.createOnetime(session, {
     ecommerce: '41919590138032',
   }
 });
-  
-    window.location.reload
+
+window.location.reload();
   });
 }, 1000)
  
@@ -274,4 +297,3 @@ product_carousel_collection_ids: ["146545"],
  }
 }
 </script>
-
