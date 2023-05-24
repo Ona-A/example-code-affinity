@@ -17,11 +17,11 @@ Now that we have that done, what does this code do:
 5) Creates a footer slot for gifting to a friend using a direct checkout link
 
 What do you need to do to modify this code to work in your test store:
-1) You will need to create a collection in Recharge and change the product_carousel_collection_ids
-2) You will need to change the images to match your store and any wording and hyperlinks to fit your test store
-3) You will need to change the gifting to a product in your store using a direct checkout link
-4) You will need to change the discounted product to a product in your store
-5) You will need to create a discount code in Recharge and use the discount code in the applyDiscountToAddress method.
+1) Create a collection in Recharge and change the product_carousel_collection_ids
+2) Change the images to match your store and any wording and hyperlinks to fit your test store
+3) Change the gifting to a product in your store using a direct checkout link
+4) Change the discounted product to a product in your store
+5) Create a discount code in Recharge and use the discount code in the applyDiscountToAddress method.
 
 
 
