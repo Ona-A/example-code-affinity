@@ -8,7 +8,8 @@ the overview page, you will have to go to the overview page and then reload the 
 2) This code assumes the customer has only 1 address 
 3) This code assumes there are currently no discount codes on the address
 4) This code assumes a happy path and nothing ever goes wrong - there is no error handling
-5) Using a method called loginCustomerPortal() - waiting for documentation to be published need SDK version (recharge-client-1.5.0.min.js).
+5) Using a method called loginCustomerPortal() - waiting for documentation to be published need SDK version (recharge-client-1.5.0.min.js).  
+   By using this method the customer doesn't have to be autheticated by Shopify (Shopify session) - the customer just needs a valid Recharge session.
 
 Now that we have that done, what does this code do:
 1) Creates a header slot for content
