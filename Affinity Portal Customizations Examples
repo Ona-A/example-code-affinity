@@ -1,0 +1,70 @@
+Three Examples:
+  1) Custom Product upsell carousel
+  2) Custom content with a sidebar slot
+  3) Prevents all cancels with a pop-up
+
+Demo 1
+1. Create a Recharge Collection
+2. Get the collection id
+3. Add script to the Footer HTML/CSS/JS
+		<script>
+		window.RechargeExtensions = {
+		product_carousel_collection_ids: ["146545"],
+		};
+		</script>
+		
+		
+Demo 2 (Builds upon Demo 1)
+1. Create Discount code
+2. Find Discount code
+3. Add script to the Header HTMAL/CSS/JS
+		<style>
+		  .aff-card {
+		    background: var(--recharge-cards-background);
+		    border: 1px solid var(--recharge-cards-border-color);
+		    border-radius: var(--recharge-corners-radius);
+		    padding: 20px;
+		    line-height: 1.4;
+		  }
+		  .aff-h3 {
+		    font-size: var(--recharge-typography-size-3);
+		    font-weight: 600;
+		    line-height: 123%;
+		  }
+		  .aff-h4 {
+		    font-size: var(--recharge-typography-size-4);
+		    font-weight: 600;
+		    line-height: 140%;
+		  }
+		  .t-mb3 {
+		    margin-bottom: 16px;
+		  }
+		  .t-db {
+		    display: block;
+		  }
+		 </style>
+		
+		<script type="text/html" data-recharge-slot="homepage-sidebar">
+		  
+		 <div class="aff-card" style="background-color: #dddff4;">
+		   
+		    <span class="aff-h3 t-db">⭐ Great Deal Today ⭐</span>
+		    <span class="aff-h4 t-mb3 t-db"
+		      ><br><br>Today only 50% Discount on NEW orders. Use code 50%OFF at checkout</span>
+		  </div>
+		</script>
+
+Demo 3 (Builds on Demo 2)
+1. Add script to the Footer HTML/CSS/JS
+		<script>
+		const alertMessage = "Due to the large discount that is being offered today only - to cancel this product, please reach out to us at baconcancel@baconstore.com";
+		document.addEventListener(
+		  "Recharge::extension::cancellation_flow",
+		  (event) => {
+		    const { subscription } = event.detail;
+		    const subscriptionProductId = subscription.shopify_product_id;
+		      event.preventDefault();
+		      window.alert(alertMessage);
+		  }
+		);
+		</script>
