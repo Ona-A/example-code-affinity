@@ -56,7 +56,8 @@ Demo 2 (Builds upon Demo 1)
 
 Demo 3 (Builds on Demo 2)
 1. Add script to the Footer HTML/CSS/JS
-		<script>
+		Cancel example
+                <script>
 		const alertMessage = "Due to the large discount that is being offered today only - to cancel this product, please reach out to us at baconcancel@baconstore.com";
 		document.addEventListener(
 		  "Recharge::extension::cancellation_flow",
@@ -68,3 +69,18 @@ Demo 3 (Builds on Demo 2)
 		  }
 		);
 		</script>
+
+                Reschedule Example
+		<script>
+		document.addEventListener("DOMContentLoaded",function(event){
+  const alertMessage = "We are currently making your bacon - you are too close to reschedule this order: Please call if you really want to reschedule, a small fee may apply: 800-Bacon";
+  		document.addEventListener(
+  		  "Recharge::click::reschedule",
+  		  (event) => {
+  		     event.preventDefault();
+  		   window.alert(alertMessage);
+  		  }
+  		);
+})
+	
+</script>			
