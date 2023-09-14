@@ -1,7 +1,7 @@
 Three Examples:
   1) Custom Product upsell carousel
   2) Custom content with a sidebar slot
-  3) Prevents all cancels with a pop-up
+  3) Prevents all cancels with a pop-up or prevents reschedule with a pop-up
 
 Demo 1
 1. Create a Recharge Collection
